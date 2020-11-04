@@ -6,6 +6,6 @@ import uz.pdp.botsale.entity.Attachment;
 import java.util.List;
 import java.util.UUID;
 
-public interface AttachmentRepository extends JpaRepository<Attachment, Long> {
+public interface AttachmentRepository extends JpaRepository<Attachment, UUID> {
     List<Attachment> findAllByNameAndSize(String name, long size);
 }
