@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import uz.pdp.botsale.entity.Brand;
-import uz.pdp.botsale.entity.Product;
 import uz.pdp.botsale.exception.ResourceNotFoundException;
 import uz.pdp.botsale.payload.ApiResponse;
 import uz.pdp.botsale.payload.ReqBrand;
@@ -25,7 +24,7 @@ public class BrandService {
     public ApiResponse saveOrEdit(ReqBrand reqBrand) {
         ApiResponse response = new ApiResponse();
         try {
-            if (!reqBrand.getName().equals(brandRepository.findBuName(reqBrand.getName())) && reqBrand.getBrandIcon() != null) {
+            if (!reqBrand.getName().equals(brandRepository.findByName(reqBrand.getName())) && reqBrand.getBrandIcon() != null) {
                 response.setMessage("Saved");
                 response.setSuccess(true);
                 Brand brand = new Brand();
@@ -39,7 +38,7 @@ public class BrandService {
                 System.err.println("You must sent sms my Number !!");
 //               ////////******************************************************************
                 brandRepository.save(brand);
-            } else if (reqBrand.getName().equals(brandRepository.findBuName(reqBrand.getName()))) {
+            } else if (reqBrand.getName().equals(brandRepository.findByName(reqBrand.getName()))) {
                 response.setMessage("This massage already exist");
                 response.setSuccess(false);
             } else if (reqBrand.getBrandIcon() == null) {

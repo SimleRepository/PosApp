@@ -7,7 +7,7 @@ import uz.pdp.botsale.entity.Brand;
 
 public interface BrandRepository extends JpaRepository<Brand, Long> {
 
-    String findBuName(String name);
+    String findByName(String name);
 
     Page<Brand> findAllByNameContainingIgnoreCase(String search, Pageable pageable);
 }
