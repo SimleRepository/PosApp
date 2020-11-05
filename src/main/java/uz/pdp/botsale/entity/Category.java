@@ -10,18 +10,24 @@ import javax.persistence.*;
 import java.util.List;
 
 
-@EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Category extends AbsNameEntity {
+public class Category {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
     @Column(unique = true)
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Category parent;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "parent", cascade = CascadeType.ALL)//perent bazdan qidiriladi cascade hammasi bitta ochirib yuboradi
+    private boolean active;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "parent", cascade = CascadeType.ALL)
+//perent bazdan qidiriladi cascade hammasi bitta ochirib yuboradi
     private List<Category> childCategories;
 }

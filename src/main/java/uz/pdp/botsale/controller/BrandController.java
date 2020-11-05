@@ -1,4 +1,4 @@
-package uz.pdp.botsale.Controller;
+package uz.pdp.botsale.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
