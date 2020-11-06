@@ -94,13 +94,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/csrf",
                         "/webjars/**")
                 .permitAll()
-                .antMatchers( "/api/file","/api/file/**","/api/category","/api/sms/smsCode","/api/brend","/api/auth/login", "/api/user/checkPhone", "/api/user/checkUser", "/api/user/setPassword")
+                .antMatchers( "/api/file","/api/file/**","/api/category","/api/sms/smsCode","/api/brend","/api/auth/login", "/api/user/checkPhone", "/api/user/checkUser", "/api/user/setPassword","/api/example/**")
                 .permitAll()
-                .antMatchers( HttpMethod.GET,"/api/excel/**","/api/file/**","/api/file","/api/category","/api/kurs","/api/auth/login","/api/user/me","/api/file/**")
+                .antMatchers( HttpMethod.GET,"/api/excel/**","/api/file/**","/api/file","/api/category","/api/auth/login","/api/user/me","/api/file/**")
                 .permitAll()
                 .antMatchers("/api/**")
                 .authenticated();
-
         // Add our custom JWT security filter
         http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
 

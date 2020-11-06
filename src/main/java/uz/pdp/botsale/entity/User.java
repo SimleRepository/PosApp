@@ -2,11 +2,9 @@ package uz.pdp.botsale.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import uz.pdp.botsale.entity.template.AbsNameEntity;
 
 import javax.persistence.*;
 import java.util.Collection;

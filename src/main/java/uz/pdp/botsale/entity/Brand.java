@@ -6,21 +6,22 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import uz.pdp.botsale.entity.template.AbsNameEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+import java.util.UUID;
 
-@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
-public class Brand extends AbsNameEntity {
+public class Brand {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
     @Column(unique = true)
     private String name;
 
     @OneToOne(fetch = FetchType.LAZY)
     private Attachment BrandIcon;
-    private boolean active=true;
+    private boolean active = true;
 }

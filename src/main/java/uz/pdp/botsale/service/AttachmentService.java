@@ -66,7 +66,7 @@ public class AttachmentService {
         return new ApiResponseModel(true, "", resUploadFiles);
     }
 
-    public HttpEntity<?> getAttachmentContent(Long attachmentId, HttpServletResponse response) {
+    public HttpEntity<?> getAttachmentContent(UUID attachmentId, HttpServletResponse response) {
         Attachment attachment = attachmentRepository.findById(attachmentId).orElseThrow(() -> new ResourceNotFoundException("Attachment", "id", attachmentId));
         AttachmentContent attachmentContent = attachmentContentRepository.findByAttachment(attachment).orElseThrow(() -> new ResourceNotFoundException("Attachment content", "attachment id", attachmentId));
 

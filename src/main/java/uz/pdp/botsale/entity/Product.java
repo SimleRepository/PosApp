@@ -18,10 +18,9 @@ public class Product extends AbsNameEntity {
     @Column(unique = true)
     private String name;
     private String description;
-    private Double sellPrice;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private Category categoryList;
+    private Category category   ;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Brand brand;

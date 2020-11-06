@@ -77,15 +77,38 @@
             <artifactId>jjwt</artifactId>
             <version>0.9.1</version>
         </dependency>
-        <dependency>
-            <groupId>com.github.xabgesagtx</groupId>
-            <artifactId>telegram-spring-boot-starter</artifactId>
-            <version>0.19</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.github.xabgesagtx</groupId>-->
+<!--            <artifactId>telegram-spring-boot-starter</artifactId>-->
+<!--            <version>0.19</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>4.1.1</version>
+        </dependency>
+<!--        barbecue -->
+        <dependency>
+            <groupId>net.sourceforge.barbecue</groupId>
+            <artifactId>barbecue</artifactId>
+            <version>1.5-beta1</version>
+        </dependency>
+<!--      BARCODE J4  -->
+        <dependency>
+            <groupId>net.sf.barcode4j</groupId>
+            <artifactId>barcode4j</artifactId>
+            <version>2.1</version>
+        </dependency>
+<!--        Zxing-->
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>javase</artifactId>
+            <version>3.3.0</version>
         </dependency>
     </dependencies>
 
