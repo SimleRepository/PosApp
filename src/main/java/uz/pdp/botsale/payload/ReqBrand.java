@@ -6,7 +6,7 @@ import java.util.UUID;
 
 @Data
 public class ReqBrand {
-    private Long id;
+    private UUID id;
     private String name;
     private UUID BrandIcon;
 }

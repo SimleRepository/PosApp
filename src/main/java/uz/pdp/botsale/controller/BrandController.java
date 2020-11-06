@@ -11,6 +11,8 @@ import uz.pdp.botsale.service.BrandService;
 import uz.pdp.botsale.service.ExcelService;
 import uz.pdp.botsale.utils.AppConstants;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping("/api/brand")
 public class BrandController {
@@ -35,7 +37,7 @@ public class BrandController {
     }
 
     @GetMapping("/{id}")
-    public ApiResponse changeActive(@PathVariable Long id, @RequestParam boolean active) {
+    public ApiResponse changeActive(@PathVariable Integer id, @RequestParam boolean active) {
         return brandService.changeActive(id, active);
     }
 
@@ -45,7 +47,7 @@ public class BrandController {
     }
 
     @DeleteMapping("/{id}")
-    public ApiResponse removeBrand(@PathVariable Long id) {
+    public ApiResponse removeBrand(@PathVariable Integer id) {
         return brandService.removeBrand(id);
     }
 }

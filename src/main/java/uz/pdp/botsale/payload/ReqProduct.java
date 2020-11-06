@@ -9,6 +9,6 @@ public class ReqProduct {
     private String description;
     private String barCode;
     private Integer categoryId;
-    private Long brandId;
+    private Integer brandId;
 
 }

@@ -13,5 +13,5 @@ public class ResUser {
     private String firstName;
     private String lastName;
     private List<String> roleNameList;
-    private boolean enabled;
+    private Boolean enabled;
 }

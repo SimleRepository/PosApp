@@ -12,6 +12,8 @@ import uz.pdp.botsale.repository.AttachmentRepository;
 import uz.pdp.botsale.repository.BrandRepository;
 import uz.pdp.botsale.utils.CommonUtils;
 
+import java.util.UUID;
+
 @Service
 public class BrandService {
 
@@ -29,7 +31,7 @@ public class BrandService {
                 response.setSuccess(true);
                 Brand brand = new Brand();
                 if (reqBrand.getId() != null) {
-                    brand = brandRepository.findById(reqBrand.getId()).orElseThrow(() -> new ResourceNotFoundException("Brand", "id", reqBrand.getId()));
+//                    brand = attachmentRepository.findById(reqBrand.getId()).orElseThrow(() -> new ResourceNotFoundException("Brand", "id", reqBrand.getId()));
                     response.setMessage("Edited");
                 }
                 brand.setBrandIcon(attachmentRepository.findById(reqBrand.getBrandIcon()).orElseThrow(() -> new ResourceNotFoundException("BranIcon", "id", reqBrand.getBrandIcon())));
@@ -63,7 +65,7 @@ public class BrandService {
         return new ResPageable(brandPage.getContent(), brandPage.getTotalElements(), page);
     }
 
-    public ApiResponse changeActive(Long id, boolean active) {
+    public ApiResponse changeActive(Integer id, boolean active) {
         try {
             Brand brand = brandRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("brand", "id", id));
             brand.setActive(active);
@@ -74,7 +76,7 @@ public class BrandService {
         }
     }
 
-    public ApiResponse removeBrand(Long id) {
+    public ApiResponse removeBrand(Integer id) {
         try {
             brandRepository.deleteById(id);
             return new ApiResponse("Deleted",true);

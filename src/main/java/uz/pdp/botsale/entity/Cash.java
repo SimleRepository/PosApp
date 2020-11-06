@@ -14,8 +14,9 @@ import java.util.List;
 public class Cash {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private Double startBalance;
-    private boolean status;
+    private Boolean status;
     @OneToMany(fetch = FetchType.LAZY)
     private List<Sell> sellList;
 }
